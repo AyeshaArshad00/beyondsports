@@ -72,17 +72,6 @@ export const parseHtmlToData = (
     const node = htmlDoc.documentElement.getElementsByTagName(
       "select"
     );
-    console.log("dropdownmenu", node);
-    for (let index = 0; index < node.length; index++) {
-      const obj: MenuData = {
-        team: nodes[index]
-          .querySelector("#yearChooser")
-        // team:Array.from(node[index].querySelectorAll("#competitionChooser")).map(e => e)
-      };
-      console.log("mannnn", obj);
-
-    }
-
 
     for (let index = 0; index < nodes.length; index++) {
       const obj: ScheduleData = {
@@ -299,15 +288,6 @@ export const parseHtmlToData = (
       "leader-block"
     );
     let node = htmlDoc.documentElement.getElementsByClassName('tableClass')
-    //   for (let index = 0; index < node.length; index++) { 
-    //   const group:any = Array.from(node[1].querySelectorAll('tbody tr')).map(e => {
-    //     return {
-    //       players: e.children[0].textContent,
-    //       bb: e.children[1].textContent,
-    //       cc: e.children[2].textContent,
-    //     }
-    //   })
-    // }
     for (let index = 0; index < nodes.length; index++) {
       const obj: LeadersData = {
         heading_name: nodes[index]
@@ -337,27 +317,5 @@ export const parseHtmlToData = (
     }
     return leadersData;
   }
-  // if (htmlDoc) {
-
-  // console.log("ababababbab",nodes);
-
-  //   for (let index = 0; index < nodes.length; index++) {
-  //     const obj: MenuData = {
-  //           team:nodes[index]
-  //           .querySelector(".ld-statname")?.textContent,
-  //           // table_data:Array.from(node[index].querySelectorAll('tbody tr')).map(e => {
-  //           //   return {
-  //           //     players: e.children[0]?.textContent,
-  //           //     bb: e.children[1]?.textContent,
-  //           //     cc: e.children[2]?.textContent,
-  //           //   }
-  //           // })
-  //     };
-  //     console.log("leaderss",obj);
-
-  //    menuData.push(obj);
-  //   }
-  //   return menuData;
-  // }
   return [];
 };

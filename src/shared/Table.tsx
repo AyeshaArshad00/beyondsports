@@ -44,11 +44,11 @@ const Table = ({ cols, data }: Props) => {
                                 {row.cells.map((cell: any) => (
                                     <td  {...cell.getCellProps()} className='p-2 text-center'>
                                         <>{cell.column.Header === 'logo' ? <img className='h-8 w-8 float-right' src={cell.value} alt='logo' /> : cell.value}</>
-
                                     </td>
-
+                                   
                                 ))}
                             </tr>
+                            
                         );
                     })}
                 </tbody>
